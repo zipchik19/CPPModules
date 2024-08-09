@@ -11,13 +11,13 @@ PhoneBook::~PhoneBook()
 
 }
 
-void PhoneBook::printing (std::string str)
+void PhoneBook::rightAligned (std::string str)
 {
     std::string result;
     if(str.length() <= 10)
-        std::cout << std::setw(10) << str << "|";
+        std::cout << std::setw(10) << str << "| ";
     else
-        std::cout << str.substr(0, 9) << ".|";
+        std::cout << str.substr(0, 9) << ".| ";
 }
 
 void PhoneBook::add(std::string contact[5])
@@ -43,28 +43,28 @@ void PhoneBook::findIndex(std::string i)
     }
     else
     {
-        printing(contacts[num].getFirstName());
-        printing(contacts[num].getLastName());
-        printing(contacts[num].getNickName());
+        rightAligned(contacts[num].getFirstName());
+        rightAligned(contacts[num].getLastName());
+        rightAligned(contacts[num].getNickName());
         std::cout << std::endl;
     }
 }
 
 void PhoneBook::search()
 {
-    std::string a;
-    for(int i = 0;i < m_count;i++)
+    std::string index;
+    for(int i = 0; i < m_count; i++)
     {
         std::cout << std::setw(10) << i << "|";
-        printing(contacts[i].getFirstName());
-        printing(contacts[i].getLastName());
-        printing(contacts[i].getNickName());
+        rightAligned(contacts[i].getFirstName());
+        rightAligned(contacts[i].getLastName());
+        rightAligned(contacts[i].getNickName());
         std::cout << std::endl;
     }
     std::cout << std::endl;
     std::cout << "Enter the index number ";
-    getline(std::cin, a);
-    findIndex(a);
+    getline(std::cin, index);
+    findIndex(index);
 }
 
 

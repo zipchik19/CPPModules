@@ -18,7 +18,7 @@ int main()
         }
         else if(!input.compare("ADD"))
         {
-            for(int i = 0;i < 5;i++)
+            for(int i = 0; i < 5; i++)
                 {
                     if(i == 0)
                     {
@@ -56,14 +56,10 @@ int main()
                     }
                     
                 }
-                        std::cout << "Print the command:" << std::endl;
-                        phonebook.add(info);
+            phonebook.add(info);
         }
         else if(!input.compare("SEARCH"))
-        {
                 phonebook.search();
-                std::cout << "Print the command:" << std::endl;
-        }
         else
         {
             std::cout<<"Wrong command, try again:"<<std::endl;
