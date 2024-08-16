@@ -17,16 +17,12 @@ void Zombie::setName(std::string name)
 	m_name = name;
 }
 
-Zombie* newZombie(std::string name)
+Zombie *ZombieHorde(int N, std::string name)
 {
-	Zombie *zombie = new Zombie;
-	zombie->setName(name);
-	return zombie;
-}
-
-void randomChump(std::string name)
-{
-	Zombie zombie;
-	zombie.setName(name);
-	zombie.announce();
+    Zombie *horde = new Zombie[N];
+    for (int i = 0; i < N; i++)
+    {
+        horde[i].setName(name);
+    }
+    return horde;
 }
