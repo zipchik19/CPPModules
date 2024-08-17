@@ -12,6 +12,7 @@ class PhoneBook
         void search();
         void rightAligned(std::string str);
         void findIndex(std::string str);
+        void printFounded(std::string str);
 	private:
         int m_index;
         int m_count;

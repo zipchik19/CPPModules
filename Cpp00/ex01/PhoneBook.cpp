@@ -34,6 +34,17 @@ void PhoneBook::add(std::string contact[5])
     contacts[m_index].setSecret(contact[4]);
 }
 
+void PhoneBook::printFounded(std::string i)
+{
+    int num = atoi(i.c_str());
+    std::cout <<"FirstName:     "<<contacts[num].getFirstName()<<std::endl;
+    std::cout <<"LastName:      "<<contacts[num].getLastName()<<std::endl;
+    std::cout <<"NickName:      "<<contacts[num].getNickName()<<std::endl;
+    std::cout <<"PhoneNumber:   "<<contacts[num].getPhoneNumber()<<std::endl;
+    std::cout <<"Secret:        "<<contacts[num].getSecret()<<std::endl;
+}
+
+
 void PhoneBook::findIndex(std::string i)
 {
     int num = atoi(i.c_str());
@@ -43,10 +54,7 @@ void PhoneBook::findIndex(std::string i)
     }
     else
     {
-        rightAligned(contacts[num].getFirstName());
-        rightAligned(contacts[num].getLastName());
-        rightAligned(contacts[num].getNickName());
-        std::cout << std::endl;
+        printFounded(i);
     }
 }
 

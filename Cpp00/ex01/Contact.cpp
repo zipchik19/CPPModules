@@ -23,20 +23,6 @@ void Contact::setNickName(std::string str)
 
 void Contact::setPhoneNumber(std::string str)
 {
-    // bool isnumber = true;
-    // for (std::string::iterator it = str.begin(); it != str.end(); ++it)
-    // {
-    //     if (!isdigit(*it))
-    //     {
-    //         isnumber = false;
-    //         std::cout<<"Write only numbers!"<<std::endl;
-    //         break ;
-    //     }
-    //     else if(isnumber)
-    //     {
-    //         m_phonenumber = str;
-    //     }
-    //}
     m_phonenumber = str;
 }
 
