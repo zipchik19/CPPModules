@@ -8,7 +8,7 @@ int main()
 	{
 		std::cout<<"Enter the level('DEBUG', 'INFO', 'WARNING', 'ERROR') or EXIT: ";
 		getline(std::cin, line);
-		if(!line.compare("EXIT"))
+		if(!line.compare("EXIT") || line.empty())
 			return 0;
 		xarl.complain(line);
 	}
