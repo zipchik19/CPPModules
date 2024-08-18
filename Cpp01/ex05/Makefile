@@ -1,6 +1,6 @@
-NAME = loser
+NAME = harl
 
-SRCS = main.cpp Rep.cpp
+SRCS = main.cpp Harl.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

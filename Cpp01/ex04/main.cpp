@@ -6,7 +6,7 @@ int main(int argc, char **argv)
 {
 	if (argc != 4)
 		return (1);
-	Replace reap(argv[0], argv[1], argv[2]);
+	Replace reap(argv[1], argv[2], argv[3]);
 	reap.mainFunc();
 	return 0;
 }

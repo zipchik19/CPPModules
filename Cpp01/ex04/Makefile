@@ -1,4 +1,4 @@
-NAME = loser
+NAME = replace
 
 SRCS = main.cpp Rep.cpp
 

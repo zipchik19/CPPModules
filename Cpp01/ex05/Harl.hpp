@@ -1,5 +1,5 @@
 #pragma once
-#inlcude <iostream>
+#include <iostream>
 
 class Harl
 {
