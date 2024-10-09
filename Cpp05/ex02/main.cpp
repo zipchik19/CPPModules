@@ -10,7 +10,7 @@
 #include "PresidentialPardonForm.hpp"
 
 int main() {
-    Bureaucrat bureaucrat("John Doe", 50);
+    Bureaucrat bureaucrat("John Doe", 160);
 
     // Create forms
     ShrubberyCreationForm shrubberyForm("school");
@@ -22,21 +22,21 @@ int main() {
         shrubberyForm.beSigned(bureaucrat);
         shrubberyForm.execute(bureaucrat);
     } catch (const std::exception& e) {
-        std::cout << "Exception caught: " << e.what() << std::endl;
+        std::cout << "Exception caught: shrubberyForm" << e.what() << std::endl;
     }
 
     try {
         robotomyForm.beSigned(bureaucrat);
         robotomyForm.execute(bureaucrat);
     } catch (const std::exception& e) {
-        std::cout << "Exception caught: " << e.what() << std::endl;
+        std::cout << "Exception caught: robotomyForm" << e.what() << std::endl;
     }
 
     try {
         pardonForm.beSigned(bureaucrat);
         pardonForm.execute(bureaucrat);
     } catch (const std::exception& e) {
-        std::cout << "Exception caught: " << e.what() << std::endl;
+        std::cout << "Exception caught: pardonForm" << e.what() << std::endl;
     }
 
     return 0;

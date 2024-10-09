@@ -1,4 +1,4 @@
-NAME = claptrap
+NAME = Bureaucrat
 
 SRCS = main.cpp Bureaucrat.cpp Form.cpp
 
