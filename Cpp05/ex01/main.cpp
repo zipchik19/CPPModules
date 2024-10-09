@@ -4,15 +4,13 @@ int main()
 {
     try
     {
-        Bureaucrat obj1("burik1", 16);
-        obj1.DecrementGrade();
-        std::cout << obj1 << std::endl;
-        Bureaucrat obj2("burik2", 160);
-        obj1.IncrementGrade();
-        std::cout << obj2 << std::endl;
-    }
-    catch(const std::exception& ex)
+        Bureaucrat bureaucrat("Xelaci burik", 6);
+        Form form("Xelaci Form", 2, 150);
+        bureaucrat.signForm(form);
+        std::cout << form << std::endl;
+        std::cout << bureaucrat << std::endl;
+    }catch (const std::exception &e)
     {
-        std::cerr << ex.what()<<std::endl;
-    }
+        std::cout << e.what() << std::endl;
+    } 
 }

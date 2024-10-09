@@ -1,6 +1,6 @@
 NAME = claptrap
 
-SRCS = main.cpp Bureaucrat.cpp Form.cpp
+SRCS = main.cpp Bureaucrat.cpp Form.cpp PresidentalPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
