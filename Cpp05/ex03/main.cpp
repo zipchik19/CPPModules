@@ -7,6 +7,7 @@
 
 int	main(void)
 {
+	try
 	{
 		Intern Intern;
 		AForm* forma;
@@ -18,6 +19,9 @@ int	main(void)
 		delete forma;
 		forma = Intern.makeForm("prsidential pardon", "Home");
 		delete forma;
+	}
+	catch(const std::exception& e) {
+            std::cout << "Exception caught: " << e.what() << std::endl;
 	}
 	return (0);
 }

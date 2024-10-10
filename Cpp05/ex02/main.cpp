@@ -10,35 +10,37 @@
 #include "PresidentialPardonForm.hpp"
 
 int main() {
-    Bureaucrat bureaucrat("John Doe", 160);
-
-    // Create forms
-    ShrubberyCreationForm shrubberyForm("school");
-    RobotomyRequestForm robotomyForm("John");
-    PresidentialPardonForm pardonForm("Alice");
-
-    // Attempt to execute forms
     try {
-        shrubberyForm.beSigned(bureaucrat);
-        shrubberyForm.execute(bureaucrat);
-    } catch (const std::exception& e) {
-        std::cout << "Exception caught: shrubberyForm" << e.what() << std::endl;
-    }
+        Bureaucrat bureaucrat("John Doe", 160);
 
-    try {
-        robotomyForm.beSigned(bureaucrat);
-        robotomyForm.execute(bureaucrat);
-    } catch (const std::exception& e) {
-        std::cout << "Exception caught: robotomyForm" << e.what() << std::endl;
-    }
+        ShrubberyCreationForm shrubberyForm("school");
+        RobotomyRequestForm robotomyForm("John");
+        PresidentialPardonForm pardonForm("Alice");
 
-    try {
-        pardonForm.beSigned(bureaucrat);
-        pardonForm.execute(bureaucrat);
-    } catch (const std::exception& e) {
-        std::cout << "Exception caught: pardonForm" << e.what() << std::endl;
-    }
+        // Attempt to execute forms
+        try {
+            shrubberyForm.beSigned(bureaucrat);
+            shrubberyForm.execute(bureaucrat);
+        } catch (const std::exception& e) {
+            std::cout << "Exception caught: shrubberyForm" << e.what() << std::endl;
+        }
 
+        try {
+            robotomyForm.beSigned(bureaucrat);
+            robotomyForm.execute(bureaucrat);
+        } catch (const std::exception& e) {
+            std::cout << "Exception caught: robotomyForm" << e.what() << std::endl;
+        }
+        try {
+            pardonForm.beSigned(bureaucrat);
+            pardonForm.execute(bureaucrat);
+        } catch (const std::exception& e) {
+            std::cout << "Exception caught: pardonForm" << e.what() << std::endl;
+        }
+    }catch (const std::exception& e) {
+            std::cout << "Exception caught: " << e.what() << std::endl;
+        // Create forms
+    }
     return 0;
 }
 
