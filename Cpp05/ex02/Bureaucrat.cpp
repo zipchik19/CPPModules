@@ -6,9 +6,8 @@ Bureaucrat::Bureaucrat(): m_name("default")
     std::cout<<"Default constructor called"<<std::endl;
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade)
+Bureaucrat::Bureaucrat(const std::string & name, int grade): m_name(name)
 {
-    m_name = name;
     m_grade = grade;
     if (m_grade < 1)
         throw GradeTooHighException();
@@ -17,9 +16,8 @@ Bureaucrat::Bureaucrat(std::string name, int grade)
     std::cout<<"Parametrized constructor called"<<std::endl;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& obj)
+Bureaucrat::Bureaucrat(const Bureaucrat& obj): m_name(obj.m_name)
 {
-    m_name = obj.m_name;
     m_grade = obj.m_grade;
     std::cout<<"Copy constructor called"<<std::endl;
 }
@@ -96,7 +94,7 @@ void Bureaucrat::signForm(AForm &form)
     try
     {
         form.beSigned(*this);
-        std::cout << "'" << this->getName() << "'" << " signed to " << form.getName() << std::endl;
+        std::cout << this->getName() << " signed to " << form.getName() << std::endl;
     }
     catch(AForm::GradeTooLowException& e)
     {

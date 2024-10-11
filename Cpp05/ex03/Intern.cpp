@@ -30,7 +30,8 @@ AForm* Intern::makeForm(const std::string &name,const std::string &target)
 {
 
     AForm *form = NULL;
-    std::string req[3] = {"presidential request","robotomy request","shrubberry request"};
+    std::string req[3] = {"presidential pardon","robotomy request","shrubbery request"};
+    std::cout << "Intern creates " << name << std::endl;
     int i = 0;
     while (i < 3 && req[i] != name)
     {

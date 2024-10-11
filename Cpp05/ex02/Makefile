@@ -10,9 +10,12 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
 
 RM = rm -f
 
+HEADERS = $(wildcard *.hpp)
+
+
 all : $(NAME)
 
-%.o : %.cpp
+%.o : %.cpp $(HEADERS)
 	$(CC) $(CFLAGS) -o $@ -c $<
 
 $(NAME) : $(OBJS) Makefile

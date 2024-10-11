@@ -13,11 +13,9 @@ int	main(void)
 		AForm* forma;
 		forma = Intern.makeForm("robotomy request", "Home");
 		delete forma;
-		forma = Intern.makeForm("shrubbery creation", "Home");
+		forma = Intern.makeForm("shrubbery request", "Home");
 		delete forma;
 		forma = Intern.makeForm("presidential pardon", "Home");
-		delete forma;
-		forma = Intern.makeForm("prsidential pardon", "Home");
 		delete forma;
 	}
 	catch(const std::exception& e) {

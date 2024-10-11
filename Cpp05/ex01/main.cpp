@@ -4,8 +4,8 @@ int main()
 {
     try
     {
-        Bureaucrat bureaucrat("Xelaci burik", 15);
-        Form form("Xelaci Form", 1, 150);
+        Bureaucrat bureaucrat("Xelaci burik", 5);
+        Form form("Xelaci Form", 10, 70);
         bureaucrat.signForm(form);
         std::cout << form << std::endl;
         std::cout << bureaucrat << std::endl;

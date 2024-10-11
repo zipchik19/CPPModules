@@ -78,7 +78,6 @@ void AForm::beSigned(Bureaucrat &bur)
         throw GradeTooLowException();
     else
     {
-        std::cout << bur.getName() << " signed " << this->getName() << std::endl;
         m_isSigned = true;
     }
 };
