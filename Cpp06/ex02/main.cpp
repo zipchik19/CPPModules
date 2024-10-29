@@ -34,22 +34,22 @@ void	identify(Base & p) {
 }
 
 Base *	generate() {
-	Base *	ptr;
+	Base *	ptr = NULL;
 	srand(time(NULL));
 	
 	int n = rand() % 3;
 	
 	if (n == 2) {
 		ptr = new A;
-		std::cout << "New A created." << std::endl;
+		std::cout << "New A" << std::endl;
 	}
 	else if (n == 1) {
 		ptr = new B;
-		std::cout << "New B created." << std::endl;
+		std::cout << "New B" << std::endl;
 	}
 	else if (n == 0) {
 		ptr = new C;
-		std::cout << "New C created." << std::endl;
+		std::cout << "New C" << std::endl;
 	}
 	return ptr;
 }

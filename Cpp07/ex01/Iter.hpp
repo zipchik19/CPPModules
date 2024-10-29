@@ -2,10 +2,9 @@
 #include <iostream>
 #include <string>
 
-typedef std::string str;
-
 template<typename T>
-void	iter(T *adress, int lenght, void (*fct)(T& var));
-
-template<typename T>
-void	printValue(T val);
+void	Iter(T *adress, int lenght, void (*fct)(T& var))
+{
+	for (int i = 0; i < lenght; i++)
+		fct(adress[i]);
+}

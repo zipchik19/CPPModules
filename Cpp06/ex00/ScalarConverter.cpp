@@ -74,8 +74,8 @@ static void maxInfConvert() {
 static void nanConvert() {
     std::cout << "char: impossible" << std::endl;
     std::cout << "int: 0" << std::endl;
-    std::cout << "float: 0" << std::endl;
-    std::cout << "double: 0" << std::endl;
+    std::cout << "float: 0.0f" << std::endl;
+    std::cout << "double: 00.0" << std::endl;
 }
 
 static void error() {

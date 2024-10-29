@@ -1,4 +1,4 @@
-NAME = Bureaucrat
+NAME = Iter
 
 SRCS = main.cpp 
 

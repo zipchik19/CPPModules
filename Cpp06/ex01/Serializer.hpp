@@ -7,7 +7,7 @@ typedef std::string str;
 struct Data
 {
     int valueInt;
-    char valueFloat;
+    float valueFloat;
 };
 
 class Serializer {
