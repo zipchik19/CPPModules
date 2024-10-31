@@ -1,6 +1,6 @@
-NAME = Identify
+NAME = Mutant
 
-SRCS = main.cpp Base.cpp 
+SRCS = main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

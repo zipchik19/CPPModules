@@ -8,7 +8,6 @@
 #include <cstdlib>
 #include <algorithm>
 #include <unistd.h>
-
 typedef std::string str;
 
 class Span {
@@ -38,9 +37,9 @@ class Span {
 				virtual const char *	what() const throw();
 		};
 	private:
-		std::vector<int>	_array;
-		unsigned int		_maxSize;
-		unsigned int		_size;
+		std::vector<int>	m_array;
+		unsigned int		m_maxSize;
+		unsigned int		m_size;
 
 		std::vector<int>	_sort() const;
 };

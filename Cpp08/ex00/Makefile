@@ -1,4 +1,4 @@
-NAME = ScalarConverter
+NAME = EasyFind
 
 SRCS = main.cpp
 

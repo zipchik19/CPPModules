@@ -1,40 +1,25 @@
-#include "Command.hpp"
+#include "EasyFind.hpp"
 
-template<typename T>
-void	swap(T &a, T &b) {
-	T	tmp;
+int	main() {
+	std::list<int>	lst;
+	int				ret;
+	bool			exception_caught = true;
 
-	tmp = a;
-	a = b;
-	b = tmp;
-}
+	lst.push_back(5);
+	lst.push_back(6);
+	lst.push_back(32);
+	lst.push_back(15);
 
-template<typename T>
-T		min(T a, T b) {
-	return (b <= a) ? b : a;
-}
-
-template<typename T>
-T		max(T a, T b) {
-	return (b >= a) ? b : a;
-}
-
-int main( void ) {
-	int a = 2;
-	int b = 3;
-
-	::swap( a, b );
-	std::cout << "a = " << a << ", b = " << b << std::endl;
-	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
-	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
-
-	std::string c = "chaine1";
-	std::string d = "chaine2";
-
-	::swap(c, d);
-	std::cout << "c = " << c << ", d = " << d << std::endl;
-	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
-	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+	try {
+		ret = easyfind(lst, 32);
+		exception_caught = false;
+	}
+	catch(const std::exception& e) {
+		std::cerr << e.what() << std::endl;
+	}
 	
+	if (!exception_caught)
+		std::cout << "Value found : " << ret << "." << std::endl;
+
 	return 0;
 }

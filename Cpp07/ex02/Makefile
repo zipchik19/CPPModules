@@ -1,6 +1,6 @@
 NAME = Identify
 
-SRCS = main.cpp Array.cpp
+SRCS = main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

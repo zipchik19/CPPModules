@@ -1,17 +1,13 @@
 #include "Span.hpp"
 
-/* -------------------------------------------------------------------------- */
-/*                          Constructors & operators                          */
-/* -------------------------------------------------------------------------- */
+Span::Span() : m_maxSize(0), m_size(0) {}
 
-Span::Span() : _maxSize(0), _size(0) {}
-
-Span::Span(unsigned int N) : _maxSize(N), _size(0) {}
+Span::Span(unsigned int N) : m_maxSize(N), m_size(0) {}
 
 Span::Span(Span const &src) {
-	this->_array = src._array;
-	this->_maxSize = src._maxSize;
-	this->_size = src._size;
+	this->m_array = src.m_array;
+	this->m_maxSize = src.m_maxSize;
+	this->m_size = src.m_size;
 }
 
 Span::~Span() {
@@ -19,27 +15,23 @@ Span::~Span() {
 
 Span &	Span::operator=(Span const &rSym) {
 	if (this != &rSym) {
-		this->_array = rSym._array;
-		this->_maxSize = rSym._maxSize;
-		this->_size = rSym._size;
+		this->m_array = rSym.m_array;
+		this->m_maxSize = rSym.m_maxSize;
+		this->m_size = rSym.m_size;
 	}
 	return *this;
 }
 
-/* -------------------------------------------------------------------------- */
-/*                              Members functions                             */
-/* -------------------------------------------------------------------------- */
-
 void				Span::addNumber(int n) {
-	if (this->_size == this->_maxSize)
+	if (this->m_size == this->m_maxSize)
 		throw Span::MaxNumbersException();
-	this->_array.push_back(n);
-	this->_size++;
+	this->m_array.push_back(n);
+	this->m_size++;
 }
 
 void				Span::bigAdd(int n) {
-	if (this->_size + n > this->_maxSize) {
-		std::cout << "Can't add " << n << " elements to the array, the max_size will be reached." << std::endl; return;
+	if (this->m_size + n > this->m_maxSize) {
+		std::cout << "Can't add " << n << " elements to the array, the maxm_size will be reached." << std::endl; return;
 	}
 	
 	int nb = 0;
@@ -47,12 +39,12 @@ void				Span::bigAdd(int n) {
 	for (int i = 0; i < n; i++) {
 		nb = rand() % 100 + 1;
 		this->addNumber(nb);
-		std::cout << this->_size << " / " << this->_maxSize << " : " << nb << std::endl;
+		std::cout << this->m_size << " / " << this->m_maxSize << " : " << nb << std::endl;
 	}
 }
 
 int					Span::shortestSpan() {
-	std::vector<int>	array(this->_array);
+	std::vector<int>	array(this->m_array);
 	
 	if (!array.size())
 		throw Span::NoNumberException();
@@ -75,28 +67,14 @@ int					Span::shortestSpan() {
 	return min;
 }
 
-// int		Span::shortestSpan()
-// {
-// 	std::vector<int>	vec(this->_array);
-// 	int					t = 2147483647;
-
-// 	sort(vec.begin(), vec.end());
-// 	for (unsigned int i = 0; i + 1 !=  vec.size(); i++)
-// 	{
-// 		if (abs(vec[i] - vec[i + 1]) < t)
-// 			t = abs(vec[i] - vec[i + 1]);
-// 	}
-// 	return (t);
-// }
-
 int					Span::longestSpan() const {
-	if (!this->_array.size())
+	if (!this->m_array.size())
 		throw Span::NoNumberException();
-	if (this->_array.size() == 1)
+	if (this->m_array.size() == 1)
 		throw Span::OneNumberException();
 		
-	int	max = *std::max_element(this->_array.begin(), this->_array.end());
-	int	min = *std::min_element(this->_array.begin(), this->_array.end());
+	int	max = *std::max_element(this->m_array.begin(), this->m_array.end());
+	int	min = *std::min_element(this->m_array.begin(), this->m_array.end());
 
 	return max - min;
 }
